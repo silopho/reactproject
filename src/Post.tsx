@@ -12,13 +12,8 @@ let liked = false
 export function Post(props: IPost){
     const [likes, setLikes] = useState(0);
     function incrementLikes() {
-        if (liked == false) {
-            setLikes(likes+1);
-            liked = true;
-        } else if (liked == true) {
-            setLikes(likes-1);
-            liked = false;
-        }
+        setLikes(likes+1);
+        liked = true;
     }
     return (
         <div>
@@ -27,7 +22,7 @@ export function Post(props: IPost){
             <img src={props.image} alt="" />
             <p>Автор: {props.author}</p>
             <p>Лайки: {likes}</p>
-            <button onClick={incrementLikes}>👍</button>
+            <button onClick={incrementLikes} disabled={liked}>👍</button>
         </div>
     )
 }
