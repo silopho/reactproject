@@ -4,8 +4,10 @@
 }
 
 #mainCont{
+    position: absolute;
     background-color: rgb(8, 8, 8);
-    height: ;
+    height: 100%;
+    width: 100%;
 }
 
 #postsCont{
