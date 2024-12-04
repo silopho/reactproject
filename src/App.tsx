@@ -1,4 +1,4 @@
-import { PostList } from "./PostList"
+import { PostList } from "./components/main/Main"
 
 export function App(){
     return(

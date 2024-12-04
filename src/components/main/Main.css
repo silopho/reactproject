@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#mainCont{
+    background-color: rgb(8, 8, 8);
+    height: ;
+}
+
+#postsCont{
+    margin-left: 70px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}

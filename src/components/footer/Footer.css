@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family:'Segoe UI';
+}
+
+#footerCont{
+    position: fixed;
+    background-color: #202324;
+    height: 100%;
+    width: 70px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#footerLogo{
+    color: white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footerLogo p{
+    font-size: 48px;
+}
+
+.footerLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    padding: 10px;
+}
+
+.footerLink:hover{
+    opacity: 0.3;
+    transition: all 0.2s ease-in-out;
+}
+
+.footerLink img{
+    width: 60px;
+    height: 60px;
+}
+
+#footerProfileLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    padding: 10px;
+}
+
+#footerProfileLink:hover{
+    opacity: 0.3;
+    transition: all 0.2s ease-in-out;
+}
+
+#footerProfileLink img{
+    width: 60px;
+    height: 60px;
+}
