@@ -22,7 +22,7 @@ export function Post(props: IPost){
                 <img src={props.image} alt="" />
             </div>
             <div className="postDesc">
-                <h2>{props.title}</h2>
+                <h3>{props.title}</h3>
                 <p>Автор: {props.author}</p>
                 <div className="postLikes">
                     <p>Лайки: {likes}</p>

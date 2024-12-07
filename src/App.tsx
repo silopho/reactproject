@@ -1,9 +1,9 @@
-import { PostList } from "./components/main/Main"
+import { Main } from "./components/Main/Main"
 
 export function App(){
     return(
         <div>
-            <PostList></PostList>
+            <Main></Main>
         </div>
     )
 }

@@ -1,10 +1,11 @@
 *{
     padding: 0;
     margin: 0;
+    font-family:'Segoe UI';
 }
 
 .postCont{
-    width: 225px;
+    width: 240px;
     height: min-content;
     background-color: #202324;
     border-radius: 25px;
@@ -12,16 +13,23 @@
 }
 
 .postImgCont img{
-    width: 225px;
-    height: 225px;
+    width: 240px;
+    height: 240px;
     border-radius: 25px;
+    object-fit: cover;
 }
 
 .postDesc{
     padding: 10px;
     color: #ffffff;
-    font-family:'Segoe UI';
     font-size: 16px;
+}
+
+.postDesc h3{
+    width: 220px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .postLikes button{

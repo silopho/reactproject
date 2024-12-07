@@ -1,21 +1,52 @@
-import { Post } from '../post/Post';
-import { Footer } from '../footer/Footer';
+import { Post } from '../Post/Post';
+import { Footer } from '../Footer/Footer';
+import { useState, useEffect } from 'react';
+
 
 import './Main.css';
 
-export function PostList() {
+export function Main() {
     const posts = [
-        { id: 0, title: 'Post 1', description: 'This is the content of Post 1', image: 'https://i0.wp.com/picjumbo.com/wp-content/uploads/autumn-leaves-fall-colors-seamless-pattern-free-image.png?w=1500&quality=50', author: 'Dima'},
-        { id: 1, title: 'Post 2', description: 'This is the content of Post 2', image: 'https://i0.wp.com/picjumbo.com/wp-content/uploads/autumn-leaves-fall-colors-seamless-pattern-free-image.png?w=1500&quality=50', author: 'Anton'},
-        { id: 2, title: 'Post 3', description: 'This is the content of Post 3', image: 'https://i0.wp.com/picjumbo.com/wp-content/uploads/autumn-leaves-fall-colors-seamless-pattern-free-image.png?w=1500&quality=50', author: 'Ivan'},
+        { id: 0, title: 'Товары из китая на Aliexpress', description: '', image: '/images/post/0.jpg', category: 'ad', author: 'Dima'},
+        { id: 1, title: 'Пудж попал хуком 😈', description: '', image: '/images/post/1.jpg', category: 'games', author: 'Anton'},
+        { id: 2, title: 'Легендарный "Гарри Поттер"', description: '', image: '/images/post/2.jpg', category: 'films', author: 'Ivan'},
+        { id: 3, title: 'Слишком серьйозный', description: '', image: '/images/post/3.jpg', category: 'animals', author: 'Oleg'},
+        { id: 4, title: 'dosia прячится в сортире 😱', description: '', image: '/images/post/4.jpg', category: 'games', author: 'Andrew'},
     ];
+
+    const [filteredPost, setFilteredPost] = useState(posts)
+    const [selectedFilter, setSelectedFilter] = useState('all')
+
+    useEffect(() => {
+        if (selectedFilter == 'all') {
+            setFilteredPost(posts)
+        } else {
+            setFilteredPost(posts.filter( (post) => {
+                return post.category === selectedFilter
+            }))
+        }
+    }, [selectedFilter])
+
     return (
-        <div id='mainCont'>
+        <div id='mainPage'>
             <Footer></Footer>
-            <div id='postsCont'>
-                {posts.map( (post) => {
-                    return <Post key={post.id} title={post.title} description={post.description} image={post.image} author={post.author}></Post>
-                })}
+            <div id='content'>
+                <div id='filterCont'>
+                    <select name='Filter' id='filterSelect' onChange={(event) => {
+                        setSelectedFilter(event.target.value)
+                    }}>
+                        <option value="all">Все</option>
+                        <option value="films">Фильмы</option>
+                        <option value="games">Игры</option>
+                        <option value="animals">Животные</option>
+                        <option value="ad">Реклама</option>
+                    </select>
+                </div>
+                <div id='postsCont'>
+                    {filteredPost.map( (post) => {
+                        return <Post key={post.id} title={post.title} description={post.description} image={post.image} author={post.author}></Post>
+                    })}
+                </div>
             </div>
         </div>
     )

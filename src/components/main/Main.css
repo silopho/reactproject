@@ -1,17 +1,41 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:'Segoe UI';
 }
 
-#mainCont{
+#mainPage{
     position: absolute;
     background-color: rgb(8, 8, 8);
     height: 100%;
     width: 100%;
 }
 
-#postsCont{
+#content{
     margin-left: 70px;
+}
+
+#filterCont{
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#filterSelect{
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #202324;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+#postsCont{
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
