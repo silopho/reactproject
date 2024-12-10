@@ -1,7 +1,8 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family:'Segoe UI';
+    text-decoration: none;
 }
 
 .postCont{
@@ -26,7 +27,7 @@
 }
 
 .postDesc h3{
-    width: 220px;
+    width: bold;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;

@@ -1,7 +1,5 @@
 import { Post } from '../Post/Post';
-import { Footer } from '../Footer/Footer';
 import { useState, useEffect } from 'react';
-
 
 import './Main.css';
 
@@ -27,10 +25,18 @@ export function Main() {
         }
     }, [selectedFilter])
 
+    useEffect(()=>{
+        async function getProducts(){
+            const response = await fetch('https://fakestoreapi.com/products')
+            const products = await response.json()
+            setFilteredPost(products)
+        }
+        getProducts()
+    },[])
+
     return (
-        <div id='mainPage'>
-            <Footer></Footer>
-            <div id='content'>
+        <div>
+            <div id='mainCont'>
                 <div id='filterCont'>
                     <select name='Filter' id='filterSelect' onChange={(event) => {
                         setSelectedFilter(event.target.value)
@@ -44,7 +50,7 @@ export function Main() {
                 </div>
                 <div id='postsCont'>
                     {filteredPost.map( (post) => {
-                        return <Post key={post.id} title={post.title} description={post.description} image={post.image} author={post.author}></Post>
+                        return <Post key={post.id} id={post.id} title={post.title} description={post.description} image={post.image} author={post.author}></Post>
                     })}
                 </div>
             </div>

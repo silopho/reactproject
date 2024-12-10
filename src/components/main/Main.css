@@ -2,24 +2,19 @@
     margin: 0;
     padding: 0;
     font-family:'Segoe UI';
+    text-decoration: none;
 }
 
-#mainPage{
-    position: absolute;
-    background-color: rgb(8, 8, 8);
-    height: 100%;
-    width: 100%;
-}
-
-#content{
+#mainCont{
     margin-left: 70px;
 }
 
 #filterCont{
-    margin: 10px;
     padding: 10px;
     margin-bottom: 0;
     padding-bottom: 0;
+    display: flex;
+    align-items: center;
 }
 
 #filterSelect{
@@ -31,8 +26,6 @@
     font-weight: bold;
     background-color: #202324;
     color: #FFFFFF;
-    display: flex;
-    justify-content: center;
 }
 
 #postsCont{

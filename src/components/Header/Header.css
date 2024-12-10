@@ -1,11 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    text-decoration: none;
     font-family:'Segoe UI';
+    text-decoration: none;
 }
 
-#footerCont{
+#headerCont{
     position: fixed;
     background-color: #202324;
     height: 100%;
@@ -17,7 +17,7 @@
     justify-content: space-between;
 }
 
-#footerLogo{
+#headerLogo{
     color: white;
     width: 70px;
     height: 70px;
@@ -26,11 +26,11 @@
     align-items: center;
 }
 
-#footerLogo p{
+#headerLogo p{
     font-size: 48px;
 }
 
-.footerLink{
+.headerLink{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,17 +38,17 @@
     padding: 10px;
 }
 
-.footerLink:hover{
+.headerLink:hover{
     opacity: 0.3;
     transition: all 0.2s ease-in-out;
 }
 
-.footerLink img{
+.headerLink img{
     width: 60px;
     height: 60px;
 }
 
-#footerProfileLink{
+#headerProfileLink{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,12 +56,12 @@
     padding: 10px;
 }
 
-#footerProfileLink:hover{
+#headerProfileLink:hover{
     opacity: 0.3;
     transition: all 0.2s ease-in-out;
 }
 
-#footerProfileLink img{
+#headerProfileLink img{
     width: 60px;
     height: 60px;
 }
