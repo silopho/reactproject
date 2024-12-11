@@ -5,8 +5,7 @@
     text-decoration: none;
 }
 
-#layout{
-    position: static;
-    background-color: rgb(8, 8, 8);
+body {
     height: 100%;
+    background-color: rgb(8, 8, 8);
 }
