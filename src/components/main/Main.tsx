@@ -3,6 +3,15 @@ import { useState, useEffect } from 'react';
 
 import './Main.css';
 
+interface IPost{
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    author: string;
+    category: string;
+}
+
 export function Main() {
     const posts = [
         { id: 0, title: 'Товары из китая на Aliexpress', description: '', image: '/images/post/0.jpg', category: 'ad', author: 'Dima'},
@@ -19,7 +28,7 @@ export function Main() {
         if (selectedFilter == 'all') {
             setFilteredPost(posts)
         } else {
-            setFilteredPost(posts.filter( (post) => {
+            setFilteredPost(posts.filter((post) => {
                 return post.category === selectedFilter
             }))
         }
@@ -49,8 +58,16 @@ export function Main() {
                     </select>
                 </div>
                 <div id='postsCont'>
-                    {filteredPost.map( (post) => {
-                        return <Post key={post.id} id={post.id} title={post.title} description={post.description} image={post.image} author={post.author}></Post>
+                    {filteredPost.map((post) => {
+                        return <Post 
+                            key={post.id}
+                            id={post.id}
+                            title={post.title}
+                            description={post.description}
+                            image={post.image}
+                            author={post.author}
+                            category={post.category}
+                            ></Post>
                     })}
                 </div>
             </div>

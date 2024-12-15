@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import './Post.css'
 
@@ -7,7 +7,8 @@ interface IPost{
     title: string;
     description: string;
     image: string;
-    author: string
+    author: string;
+    category: string;
 }
 
 export function Post(props: IPost){
@@ -18,6 +19,7 @@ export function Post(props: IPost){
         setLikes(likes+1);
         setLiked(true);
     }
+
     return (
         <div className="postCont">
             <Link to={`/post/${props.id}`} className="postImgCont">

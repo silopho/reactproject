@@ -12,6 +12,7 @@ export function App(){
                     <Route path='/' element={<Layout></Layout>}>
                         <Route path='/' element={<Main></Main>}></Route>
                         <Route path='/post/:id' element={<PostPage></PostPage>}></Route>
+                        <Route path='*' element={<h1>Page not found</h1>}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>

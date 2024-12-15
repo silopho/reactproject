@@ -7,5 +7,10 @@
 
 body {
     height: 100%;
+    width: 100%;
     background-color: rgb(8, 8, 8);
+}
+
+#layoutCont {
+    margin-left: 70px;
 }

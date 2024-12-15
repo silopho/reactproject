@@ -8,7 +8,9 @@ export function Layout() {
     return (
         <div id='layout'>
             <Header></Header>
-            <Outlet/>
+            <div id='layoutCont'>
+                <Outlet></Outlet>
+            </div>
         </div>
     )
 }
