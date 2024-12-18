@@ -1,15 +1,10 @@
 import { useState, useEffect } from "react"
-import { Link } from 'react-router-dom'
-import './Post.css'
+import { Link } from "react-router-dom"
 
-interface IPost{
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    author: string;
-    category: string;
-}
+import { IPost } from "../../../interfaces"
+
+import "./PostCard.css"
+
 
 export function Post(props: IPost){
     const [likes, setLikes] = useState(0);

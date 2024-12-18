@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Layout } from "./components/Layout/Layout";
-import { PostPage } from "./components/PostPage/PostPage";
-import { Main } from "./components/Main/Main";
+import { Layout } from "./shared/Layout/Layout";
+import { PostPage } from "./pages/PostPage/PostPage";
+import { PostList } from "./pages/PostListPage/PostList";
 
 
 export function App(){
@@ -10,7 +10,7 @@ export function App(){
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Layout></Layout>}>
-                        <Route path='/' element={<Main></Main>}></Route>
+                        <Route path='/' element={<PostList></PostList>}></Route>
                         <Route path='/post/:id' element={<PostPage></PostPage>}></Route>
                         <Route path='*' element={<h1>Page not found</h1>}></Route>
                     </Route>
