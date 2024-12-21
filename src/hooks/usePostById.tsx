@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import { IPost } from "../interfaces"
 
-export function usePostById(id: number | undefined) {
+export function usePostById(id: number) {
     const [post, setPost] = useState< IPost >()
     const [isLoading, setIsLoading] = useState(true)
 

@@ -9,15 +9,12 @@ export function PostPage() {
     const params = useParams()
     const { post, isLoading } = usePostById(Number(params.id))
 
-    if (isLoading) {
-        return (
-            <div id="loadingCont">
-                <Loading/>
-            </div>
-        )
-    }
-
     return (
+        isLoading ?
+        <div id="loadingCont">
+            <Loading/>
+        </div>
+        :
         <div id="postPageCont">
             <p id="postPageAuthor">{post?.author}</p>
             <img id="postPageImg" src={post?.image} alt="" />
