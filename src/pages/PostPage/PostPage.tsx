@@ -7,9 +7,9 @@ import "./PostPage.css"
 
 export function PostPage() {
     const params = useParams()
-    const { post } = usePostById(Number(params.id))
+    const { post, isLoading } = usePostById(Number(params.id))
 
-    if (!post) {
+    if (isLoading) {
         return (
             <div id="loadingCont">
                 <Loading/>
