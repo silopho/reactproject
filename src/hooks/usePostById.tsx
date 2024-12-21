@@ -2,9 +2,8 @@ import { useState, useEffect } from "react"
 
 import { IPost } from "../interfaces"
 
-export function usePostById(id: number) {
+export function usePostById(id: number | undefined) {
     const [post, setPost] = useState< IPost >()
-
     useEffect(() => {
         async function getPostById() {
             const response = await fetch(`https://fakestoreapi.com/products/${id}`)
@@ -13,6 +12,11 @@ export function usePostById(id: number) {
         }
         getPostById()
     }, [])
+
+    
+    if (!id) {
+        return {}
+    }
 
     return {post: post}
 }

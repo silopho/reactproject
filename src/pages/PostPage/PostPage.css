@@ -1,14 +1,21 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family:'Segoe UI';
-    text-decoration: none;
+#loadingCont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-p{
+#postPageCont {
+    width: 600px;
+    gap: 25px;
+}
+
+#postPageAuthor, #postPageDesc {
     color: #FFFFFF;
 }
 
-h1{
-    color: #FFFFFF;
+#postPageImg {
+    border-radius: 25px;
+    width: 600px;
 }
+

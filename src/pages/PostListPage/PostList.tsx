@@ -25,7 +25,7 @@ export function PostList() {
 
     return (
         <div>
-            <div id="mainCont">
+            <div id="PostsListCont">
                 <div id="filterCont">
                     <select name="Filter" id="filterSelect" onChange={(event) => {
                         setSelectedFilter(event.target.value)

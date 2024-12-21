@@ -1,21 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family:'Segoe UI';
-    text-decoration: none;
-}
-
-#mainCont{
-    padding: 25px;
-}
-
-#filterCont{
+#filterCont {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
 }
 
-#filterSelect{
+#filterSelect{ 
     border: none;
     border-radius: 25px;
     height: 50px;
@@ -26,7 +15,7 @@
     color: #FFFFFF;
 }
 
-#postsCont{
+#postsCont {
     gap: 25px;
     display: flex;
     flex-wrap: wrap;

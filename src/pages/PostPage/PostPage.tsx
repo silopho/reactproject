@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
 import { usePostById } from "../../hooks/usePostById"
-import { IPost } from "../../interfaces"
+import { Loading } from "../../shared/Loading/Loading"
 
 import "./PostPage.css"
 
@@ -10,11 +9,19 @@ export function PostPage() {
     const params = useParams()
     const { post } = usePostById(Number(params.id))
 
+    if (!post) {
+        return (
+            <div id="loadingCont">
+                <Loading/>
+            </div>
+        )
+    }
+
     return (
         <div id="postPageCont">
-            <p>{post?.author}</p>
-            <img src={post?.image} alt="" />
-            <p>{post?.description}</p>
+            <p id="postPageAuthor">{post?.author}</p>
+            <img id="postPageImg" src={post?.image} alt="" />
+            <p id="postPageDesc">{post?.description}</p>
         </div>
     )
 }
