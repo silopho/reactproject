@@ -3,7 +3,6 @@ import { Layout } from "./shared/Layout/Layout";
 import { PostPage } from "./pages/PostPage/PostPage";
 import { PostList } from "./pages/PostListPage/PostList";
 
-
 export function App(){
     return(
         <BrowserRouter>

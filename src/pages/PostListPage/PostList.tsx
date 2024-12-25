@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import { usePosts } from "../../hooks/usePosts";
 import { IPost } from "../../interfaces"
 import { Post } from "../../shared/PostList/PostCard/PostCard";
+import { Loading } from "../../shared/Loading/Loading"
 
 import "./PostList.css";
 
 export function PostList() {
-    const { posts } = usePosts()
+    const { posts, isLoading, error } = usePosts()
 
     const [filteredPost, setFilteredPost] = useState(posts)
     const [selectedFilter, setSelectedFilter] = useState("all")
@@ -37,19 +38,29 @@ export function PostList() {
                         <option value="ad">Реклама</option>
                     </select>
                 </div>
-                <div id="postsCont">
-                    {filteredPost.map((post) => {
-                        return <Post 
-                            key={post.id}
-                            id={post.id}
-                            title={post.title}
-                            description={post.description}
-                            image={post.image}
-                            author={post.author}
-                            category={post.category}
-                        ></Post>
-                    })}
-                </div>
+                {
+                    isLoading === true ? (
+                        <div id="loadingCont">
+                            <Loading/>
+                        </div>
+                    ) : ( !error ?
+                        <div id="postsCont">
+                            {filteredPost.map((post) => {
+                                return <Post 
+                                    key={post.id}
+                                    id={post.id}
+                                    title={post.title}
+                                    description={post.description}
+                                    image={post.image}
+                                    author={post.author}
+                                    category={post.category}
+                                ></Post>
+                            })}
+                        </div>
+                        :
+                        <p id="error">{error}</p>
+                    )
+                }
             </div>
         </div>
     )

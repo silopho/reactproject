@@ -7,19 +7,21 @@ import "./PostPage.css"
 
 export function PostPage() {
     const params = useParams()
-    const { post, isLoading } = usePostById(Number(params.id))
+    const { post, isLoading, error } = usePostById(Number(params.id))
 
     return (
-        isLoading ?
-        <div id="loadingCont">
-            <Loading/>
-        </div>
-        :
-        <div id="postPageCont">
-            <p id="postPageAuthor">{post?.author}</p>
-            <img id="postPageImg" src={post?.image} alt="" />
-            <p id="postPageDesc">{post?.description}</p>
-        </div>
+        isLoading === true ? (
+            <div id="loadingCont">
+                <Loading/>
+            </div>
+        ) : ( !error ? 
+            <div id="postPageCont">
+                <p id="postPageAuthor">{post?.author}</p>
+                <img id="postPageImg" src={post?.image} alt="" />
+                <p id="postPageDesc">{post?.description}</p>
+            </div>
+            :
+            <p id="error">{error}</p>
+        )
     )
 }
-
