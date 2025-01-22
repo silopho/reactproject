@@ -5,14 +5,18 @@ import { IPost } from "../../../interfaces"
 
 import "./PostCard.css"
 
-
 export function Post(props: IPost){
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
 
     function incrementLikes() {
-        setLikes(likes+1);
-        setLiked(true);
+        if (liked) {
+            setLikes(likes-1);
+            setLiked(false);
+        } else {
+            setLikes(likes+1)
+            setLiked(true)
+        }
     }
 
     return (
@@ -27,7 +31,7 @@ export function Post(props: IPost){
                 </Link>
                 <div className="postLikes">
                     <p>Лайки: {likes}</p>
-                    <button onClick={incrementLikes} disabled={liked}>👍</button>
+                    <button onClick={incrementLikes}>👍</button>
                 </div>
             </div>
     </div>

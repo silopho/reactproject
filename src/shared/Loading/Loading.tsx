@@ -1,7 +1,5 @@
 import { RotatingLines } from "react-loader-spinner"
 
-
-
 export function Loading() {
     return (
         <div id="loading">
