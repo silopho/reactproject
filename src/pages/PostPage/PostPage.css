@@ -43,3 +43,11 @@
     background-color: #202324;
     border-radius: 25px;
 }
+
+#postLikedButton{
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgb(107, 97, 97);
+    background-color: rgb(107, 97, 97);
+    border-radius: 25px;
+}

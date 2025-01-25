@@ -32,3 +32,8 @@
     background-color: rgb(8, 8, 8);
     border-radius: 25px;
 }
+
+#liked {
+    border: 2px solid rgb(107, 97, 97);
+    background-color: rgb(107, 97, 97);
+}

@@ -1,21 +1,31 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useContext } from "react"
 import { Link } from "react-router-dom"
 
 import { IPost } from "../../../interfaces"
+
+import { postsContext } from "../../../App"
 
 import "./PostCard.css"
 
 export function Post(props: IPost){
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
+    const [likedId, setLikedId] = useState< string | undefined >(undefined)
+
+    const likedPosts = useContext(postsContext)
 
     function incrementLikes() {
         if (liked) {
-            setLikes(likes-1);
-            setLiked(false);
-        } else {
+            setLikes(likes-1)
+            setLiked(false)
+            setLikedId(undefined)
+            console.log(props.id)
+        } else {    
             setLikes(likes+1)
             setLiked(true)
+            setLikedId("liked")
+            console.log(props.id)
+            likedPosts.addToLikedPosts(props)
         }
     }
 
@@ -31,7 +41,7 @@ export function Post(props: IPost){
                 </Link>
                 <div className="postLikes">
                     <p>Лайки: {likes}</p>
-                    <button onClick={incrementLikes}>👍</button>
+                    <button id={likedId} onClick={incrementLikes}>👍</button>
                 </div>
             </div>
     </div>
