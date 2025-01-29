@@ -10,9 +10,10 @@ import { IPost } from "./interfaces";
 interface ILikedPosts {
     likedPosts: IPost[];
     addToLikedPosts: (post: IPost) => void;
+    removeFromLikedPosts: (post: IPost) => void;
 }
 
-const initalPosts: ILikedPosts = {likedPosts: [], addToLikedPosts: (post: IPost) => {}}
+const initalPosts: ILikedPosts = {likedPosts: [], addToLikedPosts: (post: IPost) => {}, removeFromLikedPosts: (post: IPost) => {}}
 export const postsContext = createContext< ILikedPosts >(initalPosts)
 
 export function App(){
@@ -24,8 +25,16 @@ export function App(){
         console.log(array)
     }
 
+    function removeFromLikedPosts(removedPostId: IPost) {
+        let array = likedPosts.filter((likedPost: IPost) => {
+            return likedPost.id !== removedPostId.id
+        })
+        setLikedPosts(array)
+        console.log(array)
+    }
+
     return(
-        <postsContext.Provider value={{likedPosts: likedPosts, addToLikedPosts: addToLikedPosts}}>
+        <postsContext.Provider value={{likedPosts: likedPosts, addToLikedPosts: addToLikedPosts, removeFromLikedPosts: removeFromLikedPosts}}>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Layout></Layout>}>

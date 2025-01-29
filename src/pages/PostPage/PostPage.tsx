@@ -23,6 +23,7 @@ export function PostPage() {
             setLiked(false)
             setLikedId("postLikeButton")
             console.log(post?.id)
+            if (post) {likedPosts.removeFromLikedPosts(post)}
         } else {    
             setLikes(likes+1)
             setLiked(true)

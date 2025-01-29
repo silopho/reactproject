@@ -20,6 +20,7 @@ export function Post(props: IPost){
             setLiked(false)
             setLikedId(undefined)
             console.log(props.id)
+            likedPosts.removeFromLikedPosts(props)
         } else {    
             setLikes(likes+1)
             setLiked(true)
@@ -46,4 +47,4 @@ export function Post(props: IPost){
             </div>
     </div>
     )
-}
+} 
