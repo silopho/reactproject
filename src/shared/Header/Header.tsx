@@ -7,6 +7,7 @@ export function Header() {
             <Link to={'/'} id='headerLogo'><p>F</p></Link>
             <div id='headerLinks'>
                 <Link to={'/'} className='headerLink'><img src="images/icons/home.png" alt="" /></Link>
+                <Link to={'/liked'} className='headerLink'><img src="images/icons/thumb_up.png" alt="" /></Link>
                 <Link to={'/'} className='headerLink'><img src="images/icons/search.png" alt="" /></Link>
             </div>
             <div id='headerProfile'>

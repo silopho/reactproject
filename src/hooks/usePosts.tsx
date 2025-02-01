@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-import { IPost } from "../interfaces"
+import { IPost } from "../shared/Interfaces/Interfaces"
 
 export function usePosts() {
     const [posts, setPosts] = useState< IPost[] >([])

@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
-import { usePosts } from "../../hooks/usePosts";
-import { IPost } from "../../interfaces"
-import { Post } from "../../shared/PostList/PostCard/PostCard";
+import { usePosts } from "../../hooks/usePosts"
+import { IPost } from "../../shared/Interfaces/Interfaces"
+import { Post } from "../../shared/PostList/PostCard/PostCard"
 import { Loading } from "../../shared/Loading/Loading"
 
 import "./PostList.css";

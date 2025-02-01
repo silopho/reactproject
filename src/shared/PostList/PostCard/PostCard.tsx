@@ -1,32 +1,29 @@
 import { useState, useEffect, useRef, useContext } from "react"
 import { Link } from "react-router-dom"
 
-import { IPost } from "../../../interfaces"
+import { IPost } from "../../Interfaces/Interfaces"
 
-import { postsContext } from "../../../App"
+import { postsContext, usePostContext } from "../../../contexts/likedPostsContext"
 
 import "./PostCard.css"
 
 export function Post(props: IPost){
     const [likes, setLikes] = useState(0);
-    const [liked, setLiked] = useState(false);
-    const [likedId, setLikedId] = useState< string | undefined >(undefined)
+    const [likedId, setLikedId] = useState< string >("postLikeButton")
 
-    const likedPosts = useContext(postsContext)
+    const { likedPosts, addToLikedPosts, removeFromLikedPosts, isLiked } = usePostContext()
 
-    function incrementLikes() {
-        if (liked) {
+    function incrementLikes(post: IPost) {
+        if (isLiked(post.id)) {
+            if (likedPosts) {removeFromLikedPosts(post.id)}
             setLikes(likes-1)
-            setLiked(false)
-            setLikedId(undefined)
-            console.log(props.id)
-            likedPosts.removeFromLikedPosts(props)
+            setLikedId("postLikeButton")
+            console.log(likedPosts)
         } else {    
             setLikes(likes+1)
-            setLiked(true)
-            setLikedId("liked")
-            console.log(props.id)
-            likedPosts.addToLikedPosts(props)
+            setLikedId("postLikedButton")
+            console.log(likedPosts)
+            if (likedPosts) {addToLikedPosts(post)}
         }
     }
 
@@ -42,7 +39,7 @@ export function Post(props: IPost){
                 </Link>
                 <div className="postLikes">
                     <p>Лайки: {likes}</p>
-                    <button id={likedId} onClick={incrementLikes}>👍</button>
+                    <button id={likedId} onClick={() => incrementLikes(props)}>👍</button>
                 </div>
             </div>
     </div>
