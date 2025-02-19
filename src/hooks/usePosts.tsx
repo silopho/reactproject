@@ -10,9 +10,9 @@ export function usePosts() {
     useEffect(() => {
         async function getPosts () {
             try {
-                const response = await fetch('https://fakestoreapi.com/products')
+                const response = await fetch('http://localhost:8000/api/post/all')
                 const data = await response.json()
-                setPosts(data)
+                setPosts(data.data)
             } catch (error) {
                 const err = error as string
                 setError(`${err}`)

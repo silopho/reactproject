@@ -14,11 +14,11 @@ export function PostList() {
     const [selectedFilter, setSelectedFilter] = useState("all")
 
     useEffect(() => {
-        if (selectedFilter == "all") {
+        if (selectedFilter === "all") {
             setFilteredPost(posts)
         } else {
             setFilteredPost(posts.filter((post: IPost) => {
-                return post.category == selectedFilter
+                return post.category === selectedFilter
             }))
 
         }
@@ -49,10 +49,11 @@ export function PostList() {
                                 return <Post 
                                     key={post.id}
                                     id={post.id}
-                                    title={post.title}
-                                    description={post.description}
+                                    name={post.name}
+                                    text={post.text}
                                     image={post.image}
-                                    author={post.author}
+                                    user={post.user}
+                                    date={post.date}
                                     category={post.category}
                                 ></Post>
                             })}

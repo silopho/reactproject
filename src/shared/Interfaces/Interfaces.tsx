@@ -1,8 +1,9 @@
 export interface IPost{
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    author: string;
-    category: string;
+    id: number
+    name: string
+    text: string
+    image: string | null
+    user: string | null
+    date: string,
+    category: string
 }

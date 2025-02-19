@@ -10,9 +10,9 @@ export function usePostById(id: number) {
     useEffect(() => {
         async function getPostById() {
             try {
-                const response = await fetch(`https://fakestoreapi.com/products/${id}`)
+                const response = await fetch(`http://localhost:8000/api/post/${id}`)
                 const data = await response.json()
-                setPost(data)
+                setPost(data.data)
             } catch (error) {
                 const err = error as string
                 setError(`${err}`)

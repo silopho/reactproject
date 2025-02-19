@@ -4,7 +4,6 @@ import { usePostContext } from "../../contexts/likedPostsContext"
 
 import { usePostById } from "../../hooks/usePostById"
 import { Loading } from "../../shared/Loading/Loading"
-
 import { IPost } from "../../shared/Interfaces/Interfaces"
 
 import "./PostPage.css"
@@ -33,6 +32,7 @@ export function PostPage() {
         }
     }
 
+    
     return (
         isLoading === true
         ?
@@ -43,13 +43,13 @@ export function PostPage() {
         !error
         ?
         <div id="postPageCont">
-            <p id="postPageAuthor">{post?.author}</p>
-            <img id="postPageImg" src={post?.image} alt="" />
+            <p id="postPageAuthor">{}</p>
+            <img id="postPageImg" src={post?.image  ?? undefined} alt="" />
             <div id="postLikes">
                 <button id={likedId} onClick={() => {post && incrementLikes(post)}}>👍</button>
                 <p>Лайки: {likes}</p>
             </div>
-            <p id="postPageDesc">{post?.description}</p>
+            <p id="postPageDesc">{post?.text}</p>
         </div>
         :
         <p id="error">{error}</p>

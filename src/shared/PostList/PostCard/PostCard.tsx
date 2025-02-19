@@ -30,12 +30,12 @@ export function Post(props: IPost){
     return (
         <div className="postCont">
             <Link to={`/post/${props.id}`} className="postImgCont">
-                <img src={props.image} alt="" />
+                <img src={props.image ?? undefined} alt="" />
             </Link>
             <div className="postDesc">
                 <Link to={`/post/${props.id}`}>
-                    <h3>{props.title}</h3>
-                    <p>Автор: {props.author}</p>
+                    <h3>{props.name}</h3>
+                    <p>Автор: {props.user}</p>
                 </Link>
                 <div className="postLikes">
                     <p>Лайки: {likes}</p>
