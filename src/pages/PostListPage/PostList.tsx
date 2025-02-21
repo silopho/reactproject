@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 import { usePosts } from "../../hooks/usePosts"
-import { IPost } from "../../shared/Interfaces/Interfaces"
+import { IPost } from "../../shared/types/types"
 import { Post } from "../../shared/PostList/PostCard/PostCard"
 import { Loading } from "../../shared/Loading/Loading"
 

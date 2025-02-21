@@ -1,0 +1,65 @@
+.loginPage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loginForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1000px;
+    height: 500px;
+    gap: 10px
+}
+
+.inputsForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputTextForm {
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.formError {
+    color: white
+}
+
+.loginButton {
+    width: 175px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.registerText {
+    color: white;
+    font-size: 16px;
+}
+
+#registerLinkButton {
+    color: yellow;
+    font-size: 16px;
+}
+
+.loginPageSuccess {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}

@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState, useContext } from 'react';
 
-import { IPost } from "../shared/Interfaces/Interfaces";
+import { IPost } from "../shared/types/types";
 
 interface ILikedPostsContext {
     likedPosts: IPost[];

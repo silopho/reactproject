@@ -4,7 +4,7 @@ import { usePostContext } from "../../contexts/likedPostsContext"
 
 import { usePostById } from "../../hooks/usePostById"
 import { Loading } from "../../shared/Loading/Loading"
-import { IPost } from "../../shared/Interfaces/Interfaces"
+import { IPost } from "../../shared/types/types"
 
 import "./PostPage.css"
 

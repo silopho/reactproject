@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-import { IPost } from "../shared/Interfaces/Interfaces"
+import { IPost } from "../shared/types/types"
 
 export function usePostById(id: number) {
     const [post, setPost] = useState< IPost >()

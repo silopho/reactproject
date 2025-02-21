@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react"
 import { Link } from "react-router-dom"
 
-import { IPost } from "../../Interfaces/Interfaces"
+import { IPost } from "../../types/types"
 
 import { postsContext, usePostContext } from "../../../contexts/likedPostsContext"
 

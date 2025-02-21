@@ -19,16 +19,16 @@ export function LikedPostsPage() {
             <div id="PostsListCont">
                 <div id="postsCont">
                     {likedPosts.likedPosts.map((post) => {
-                            return <Post 
-                                key={post.id}
-                                id={post.id}
-                                name={post.name}
-                                text={post.text}
-                                image={post.image}
-                                user={post.user}
-                                date={post.date}
-                                category={post.category}
-                            ></Post>
+                        return <Post 
+                            key={post.id}
+                            id={post.id}
+                            name={post.name}
+                            text={post.text}
+                            image={post.image}
+                            user={post.user}
+                            date={post.date}
+                            category={post.category}
+                        ></Post>
                     })}
                 </div>
             </div>
