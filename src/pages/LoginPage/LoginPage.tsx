@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
+// Импорт не используется, нужно убрать
 import { useEffect, useState } from "react"
 import { IError, IUser, ISuccess,  } from "../../shared/types/types"
 
 import "./LoginPage.css"
-
+// Лучше назвать ILoginForm
 interface IForm {
     email: string,
     password: string,
@@ -25,11 +26,14 @@ export function LoginPage() {
             },
             body: JSON.stringify(data)
         })
+        // Отличная работа! Делать типизацию объекта ответа очень удобно!
         const result: ISuccess<IUser> | IError = await res.json()
+        // Консоль лог лишний
         console.log(result)
         if (result.status == "success") {
             setSuccess(true)
         } else {
+            // Для упрощения ошибок можно сделать объект со всеми вариантами, смотреть ImprovedLoginPage
             if (result.message == "user not found") {
                 setError('email', { type: 'custom', message: 'Пользователя не существует'})
             }

@@ -31,6 +31,7 @@ export function PostList() {
                     <select name="Filter" id="filterSelect" onChange={(event) => {
                         setSelectedFilter(event.target.value)
                     }}>
+                        {/* Здесь нужно отображать массив категорий взятых по API */}
                         <option value="all">Все</option>
                         <option value="films">Фильмы</option>
                         <option value="games">Игры</option>

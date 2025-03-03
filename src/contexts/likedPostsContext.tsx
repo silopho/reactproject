@@ -15,7 +15,7 @@ const initalPosts: ILikedPostsContext = {
     removeFromLikedPosts: (id: number) => {},
     isLiked: (id: number) => false
 }
-
+// не нужно экспортировать контекст, тк есть ниже хук
 export const postsContext = createContext< ILikedPostsContext >(initalPosts)
 
 export function usePostContext() {
@@ -23,6 +23,7 @@ export function usePostContext() {
 }
 
 interface ILikedPostsContextProvider {
+    // лучше сделать children опциональным
     children: ReactNode
 }
 
@@ -33,6 +34,7 @@ export function LikedPostsContextProvider(props: ILikedPostsContextProvider) {
     function addToLikedPosts(likedPost: IPost) {
         let array = [...likedPosts, likedPost]
         setLikedPosts(array)
+        // консоль лог лучше убрать
         console.log(array)
     }
 
@@ -41,6 +43,7 @@ export function LikedPostsContextProvider(props: ILikedPostsContextProvider) {
             return likedPost.id !== id
         })
         setLikedPosts(array)
+        // консоль лог лучше убрать
         console.log(array)
     }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+// Адаптируй под запрос на получение всех тегов
 import { IPost } from "../shared/types/types"
 
 export function usePosts() {

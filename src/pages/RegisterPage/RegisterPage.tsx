@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { ISuccess, IError, IUser } from "../../shared/types/types"
 
 import "./RegisterPage.css"
-
+// IRegisterForm
 interface IForm {
     username: string,
     email: string,

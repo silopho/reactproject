@@ -9,6 +9,11 @@ export function usePostById(id: number) {
 
     useEffect(() => {
         async function getPostById() {
+            // здесь не хватает проверки на то, что id NaN
+            // Number('dasdsad') -> NaN
+            // NaN является типом number :)
+            // if (!id) return
+            // или if (isNaN(id)) return
             try {
                 const response = await fetch(`http://localhost:8000/api/post/${id}`)
                 const data = await response.json()
@@ -21,6 +26,7 @@ export function usePostById(id: number) {
             }
         }
         getPostById()
+        // в зависимость лучше добавить id
     }, [])
 
     return {
